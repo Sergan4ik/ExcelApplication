@@ -207,17 +207,13 @@ namespace ExcelApplication
 
         private void HelpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string debug = "";
-            foreach (var a in dataGrid.Grid)
-                foreach (var b in a)
-                    debug += b.Name + " " + b.Value + " " + b.Expression + "\n";
             string helpMsg = "This is the custom version of Excel application." +
-                " It suuports basic arithmetic operations: +, -, *, /, MOD, DIV, MMIN(x1,...xN), MMAX(x1,...xN)." +
+                " It suuports basic arithmetic operations: +, -, *, /, MOD, DIV, inc, dec, unary -/+." +
                 " Program also allows you to add/delete columns and rows, and saving/opening your file as well." +
                 " Select the cell, enter the expression and click on Calculate button, the result will appear immediately." +
                 " Using is quite simple, so I'm sure you will cope with this program. Good Luck!";
 
-            MessageBox.Show(debug, "Help", MessageBoxButtons.OK);
+            MessageBox.Show(helpMsg, "Help", MessageBoxButtons.OK);
         }
 
     }

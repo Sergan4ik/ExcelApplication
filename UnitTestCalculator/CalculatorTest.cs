@@ -22,10 +22,18 @@ namespace UnitTestCalculator
         }
 
         [TestMethod]
-        public void TestMminInsideMmin()
+        public void TestUnaryOperator()
         {
-            string expression = "MMIN(1, -3, MMIN(3, -10, 5))";
-            double expected = -10;
+            string expression = "-(1234 + 1)";
+            double expected = -1235;
+            Assert.AreEqual(Calculator.Evaluate(expression), expected);
+        }
+
+        [TestMethod]
+        public void TestDec()
+        {
+            string expression = "dec 0";
+            double expected = -1;
             Assert.AreEqual(Calculator.Evaluate(expression), expected);
         }
     }
